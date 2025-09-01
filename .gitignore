@@ -8,3 +8,4 @@ bundle.js
 bundle.js.map
 mpv/
 package-lock.json
+.env

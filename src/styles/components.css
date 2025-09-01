@@ -1,0 +1,521 @@
+/* TitleBar Styles */
+.title-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 9999;
+  justify-content: space-between;
+  background-color: var(--background-color);
+  color: var(--main-text-color);
+  font-size: 12px;
+  text-align: center;
+  -webkit-app-region: drag;
+  height: 22px;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.title-bar-back {
+  width: 55px;
+  align-items: center;
+}
+
+.title-bar-back svg {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title-bar-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-app-region: drag;
+}
+
+.button-title-bar:hover {
+  background-color: #1b1b1b;
+}
+
+.button-title-bar {
+  -webkit-app-region: no-drag;
+  height: 22px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  color: var(--main-text-color);
+}
+
+/* LeftMenu Styles */
+.left-menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--alt-background-color);
+  align-items: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.top-menu-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.bottom-menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.menu-hidden {
+  width: 75px;
+  min-width: 75px;
+}
+
+/* LeftMenuAvatar Styles */
+.left-menu-profile img {
+  border-radius: 100%;
+}
+
+.left-menu-profile {
+  margin-bottom: 10px;
+}
+
+/* LeftMenuButton Styles */
+.left-menu-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.left-menu-button:hover {
+  background-color: var(--select-button-left-color);
+}
+
+.left-menu-button.selected {
+  background-color: var(--select-button-left-color);
+}
+
+.left-menu-button.selected:hover {
+  background-color: var(--background-color);
+}
+
+/* BaseMainButton Styles */
+.base-main-button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  height: var(--height);
+  border-radius: var(--border-radius);
+  width: var(--width);
+}
+
+.base-main-button.default {
+  background-color: var(--alt-background-color);
+  color: var(--main-text-color);
+}
+
+.base-main-button.primary {
+  background-color: var(--main-text-color);
+  color: var(--alt-background-color);
+}
+
+.base-main-button.primary:hover {
+  background-color: var(--secondary-text-color);
+}
+
+.base-main-button.primary:disabled {
+  background-color: var(--alt-background-color) !important;
+  color: var(--main-text-color);
+}
+
+.base-main-button.transparent {
+  background-color: transparent;
+  color: var(--current-color);
+  border: solid 1px var(--current-color);
+}
+
+.base-main-button .loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--main-text-color);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Modal Styles */
+.modal-background {
+  display: flex;
+  position: fixed;
+  top: 22px;
+  left: 75px;
+  width: calc(100vw - 75px);
+  height: calc(100vh - 22px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: var(--background-color);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.modal-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--main-text-color);
+  margin-top: 25px;
+  margin-left: 35px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  height: 85%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  overflow-y: auto;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 10px;
+  height: 17px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background-color: #1a1919;
+  border-radius: 10px;
+  opacity: 0.01;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #828282;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px var(--scroll-bar-handle-bg-color);
+  -webkit-box-shadow: inset 0 0 6px var(--scroll-bar-handle-bg-color);
+}
+
+.modal-content::-webkit-scrollbar-thumb:window-inactive {
+  background: var(--scroll-bar-track-bg-color);
+}
+
+/* Preloader Styles */
+.center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-spinner,
+.lds-spinner div,
+.lds-spinner div:after {
+  box-sizing: border-box;
+}
+
+.lds-spinner {
+  color: currentColor;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3.2px;
+  left: 36.8px;
+  width: 6.4px;
+  height: 17.6px;
+  border-radius: 20%;
+  background: currentColor;
+}
+
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* AnimePoster Styles */
+.anime-poster img {
+  border-radius: var(--border-radius);
+  outline-color: var(--color);
+  outline-style: var(--border-enabled);
+  outline-width: 3px;
+  object-fit: cover;
+}
+
+.anime-poster-skeleton {
+  outline-color: var(--color);
+  outline-style: var(--border-enabled);
+  outline-width: 3px;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background-color: var(--skeleton-background-color);
+  position: absolute;
+  z-index: calc(var(--z-index) - 1);
+  animation: skeletonAnimation 3s ease-in-out 100ms infinite forwards;
+}
+
+.anime-poster {
+  position: relative;
+  min-width: var(--width);
+  min-height: var(--height);
+}
+
+.anime-poster-text {
+  position: absolute;
+  bottom: 0;
+  z-index: calc(var(--z-index) + 1);
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color);
+  width: 100%;
+  height: 25px;
+  margin-bottom: 6px;
+  border-radius: 60px;
+  color: var(--main-text-color);
+  display: flex;
+}
+
+.anime-poster-shadow {
+  -webkit-box-shadow: 4px 4px 8px 0px var(--shadow-color, rgba(34, 60, 80, 0.2));
+  -moz-box-shadow: 4px 4px 8px 0px var(--shadow-color, rgba(34, 60, 80, 0.2));
+  box-shadow: 4px 4px 8px 0px var(--shadow-color, rgba(34, 60, 80, 0.2));
+}
+
+/* AnimeFullRowCard Styles */
+.anime-full-row-card {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.anime-full-row-card:hover {
+  cursor: pointer;
+}
+
+.anime-item-title {
+  font-size: var(--anime-full-row-title-size);
+  font-weight: var(--anime-full-row-title-weight);
+  color: var(--main-text-color);
+  margin-bottom: 5px;
+}
+
+.anime-item-epCount {
+  font-size: var(--anime-full-row-epCount-size);
+  color: var(--third-text-color);
+  font-weight: var(--anime-full-row-epCount-weight);
+  margin-bottom: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.anime-item-epCount .dot {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.full-row-anime-poster {
+  margin-right: 25px;
+}
+
+.anime-item-description {
+  font-size: var(--anime-full-row-description-size);
+  color: var(--third-text-color);
+  line-height: var(--anime-full-row-description-line-height);
+  font-weight: var(--anime-full-row-description-weight);
+}
+
+/* Home Page Styles */
+.releases-container {
+  width: 100%;
+  height: 100%;
+}
+
+.releases-type {
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.releases-type-title {
+  margin-right: auto;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--third-text-color);
+  transition: all 0.3s ease;
+  font-weight: 400;
+  font-size: 16px;
+  position: relative;
+}
+
+.releases-type-title:hover {
+  cursor: pointer;
+  background-color: var(--alt-background-color);
+}
+
+.releases-type-title:last-child {
+  margin-right: 80px;
+}
+
+.releases-type-title:first-child {
+  margin-left: 80px;
+}
+
+.releases-type-title.selected {
+  font-weight: bold;
+  color: var(--main-text-color);
+}
+
+.releases-type-title.selected:hover {
+  background-color: var(--background-color);
+  cursor: default;
+}
+
+.releases-type-title.selected::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-text-color);
+  animation: line-grow 0.5s cubic-bezier(0.55, 0, 0.1, 1) forwards;
+}
+
+@keyframes line-grow {
+  0% {
+    width: 0;
+    left: 50%;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
